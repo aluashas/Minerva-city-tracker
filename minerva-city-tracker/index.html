@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minerva City Rotation Tracker</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-lockup">
+        <span class="logo-mark">M</span>
+        <div class="logo-text">
+          <span class="logo-title">Minerva</span>
+          <span class="logo-sub">City Rotation Tracker</span>
+        </div>
+      </div>
+      <nav class="header-nav">
+        <button class="nav-btn active" data-view="map">Map View</button>
+        <button class="nav-btn" data-view="planner">My Planner</button>
+        <button class="nav-btn" data-view="deadlines">Deadlines</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- MAP VIEW -->
+    <section class="view active" id="view-map">
+      <div class="map-layout">
+
+        <!-- City Cards Column -->
+        <div class="city-sidebar">
+          <div class="sidebar-header">
+            <h2>Rotations <span class="year-badge">2025–26</span></h2>
+            <p class="sidebar-desc">Click a city to explore details, key dates, and student notes.</p>
+          </div>
+          <div class="city-list" id="cityList"></div>
+        </div>
+
+        <!-- Detail Panel -->
+        <div class="city-detail-panel" id="detailPanel">
+          <div class="detail-placeholder">
+            <div class="placeholder-icon">🌍</div>
+            <p>Select a city to view details</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PLANNER VIEW -->
+    <section class="view" id="view-planner">
+      <div class="planner-layout">
+        <div class="planner-header">
+          <h2>My Rotation Planner</h2>
+          <p>Track your experiences, goals, and reflections for each city.</p>
+        </div>
+        <div class="planner-grid" id="plannerGrid"></div>
+      </div>
+    </section>
+
+    <!-- DEADLINES VIEW -->
+    <section class="view" id="view-deadlines">
+      <div class="deadlines-layout">
+        <div class="deadlines-header">
+          <h2>Key Deadlines & Reminders</h2>
+          <p>Stay on top of important dates across all rotations.</p>
+        </div>
+        <div class="deadline-timeline" id="deadlineTimeline"></div>
+        <div class="add-deadline-form">
+          <h3>Add a Reminder</h3>
+          <div class="form-row">
+            <input type="text" id="deadlineTitle" placeholder="Title (e.g. Visa renewal)" />
+            <select id="deadlineCity">
+              <option value="">All Cities</option>
+            </select>
+            <input type="date" id="deadlineDate" />
+            <button class="btn-primary" id="addDeadlineBtn">Add</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
